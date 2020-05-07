@@ -1,0 +1,40 @@
+{
+  "name": "eslint-config-fox",
+  "description": "Edwin's eslint configuration",
+  "private": false,
+  "version": "0.1.0",
+  "keywords": [
+    "eslint",
+    "fox",
+    "eslint-config"
+  ],
+  "homepage": "https://github.com/eankeen/eslint-config-fox#readme",
+  "bugs": {
+    "url": "https://github.com/eankeen/eslint-config-fox/issues"
+  },
+  "author": {
+    "name": "Edwin Kofler",
+    "url": "https://edwinkofler.com"
+  },
+  "main": ".eslintrc.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eankeen/eslint-config-fox.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=12",
+    "pnpm": ">=4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "peerDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-babel": "^5.3.0"
+  }
+}
