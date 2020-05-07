@@ -1,5 +1,5 @@
 const eslint = require('eslint')
-const config = require('./src/index')
+const config = require('../')
 
 test('config has basic properties', () => {
   expect(config).toBeObject()
@@ -16,7 +16,7 @@ test('eslint engine evaluates config file', () => {
 
   let cli = new CLIEngine({
     useEslintrc: false,
-    configFile: '.eslintrc.json',
+    configFile: require.resolve('../'),
   })
 
   const code = 'let foo = 1\nlet bar = function () {}\nbar(foo)\n'

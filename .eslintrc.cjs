@@ -34,7 +34,7 @@ const rootConfig = {
     applescript: false,
     nashorn: false,
     serviceworker: false,
-    atontest: false,
+    atomtest: false,
     embertest: false,
     webextensions: false,
     greasemonkey: false
@@ -70,8 +70,8 @@ const rootConfig = {
     {
       "files": ["**/test.js"],
        "env": {
-        "jest": true,
-        "jest/globals": true
+        // "jest": true,
+        // "jest/globals": true
        }
     }
   ]
@@ -96,7 +96,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const configCozy = {
   default: {
     rules: {
-      'eqeqeq': 'always',
+      'eqeqeq': ['error', 'always', { 'null': 'ignore' }],
       'no-eq-null': 'error',
       'no-implied-eval': 'error',
       'no-iterator': 'error',
@@ -134,12 +134,14 @@ const configStrict = {
   default: {
     rules: {
       'no-await-in-loop': 'error',
-      'no-useless-backreference': 'error',
+      // TODO: eslint 7
+      // 'no-useless-backreference': 'error',
       'accessor-pairs': 'error',
       'array-callback-return': 'error',
       'block-scoped-var': 'error',
-      'complexity': '20',
-      'default-case-last': 'error',
+      'complexity': ['error', { max: 20 }],
+      // TODO: eslint 7
+      // 'default-case-last': 'error',
       'dot-location': ['error', 'property'],
       'max-classes-per-file': ['error', 2],
       'no-constructor-return': 'error',
@@ -155,9 +157,8 @@ const configStrict = {
       'no-useless-concat': 'error',
       'no-useless-return': 'error',
       'prefer-promise-reject-errors': 'error',
-      'wrap-iife': 'inside',
+      'wrap-iife': ['error', 'inside'],
       'yoda': ['error', 'never'],
-      'no-useless-backreference': 'error',
       'no-eval': 'error',
       'no-template-curly-in-string': 'error',
       'dot-notation': ['error', { allowKeywords: true }],
@@ -194,7 +195,7 @@ const configExcessive = {
   default: {
       rules: {
         'class-methods-use-this': 'error',
-        'complexity': '15',
+        'complexity': ['error', { max: 15 }],
         'consistent-return': 'error',
         'default-case': 'error',
         'default-param-last': 'error',
@@ -202,18 +203,18 @@ const configExcessive = {
         'guard-for-in': 'error',
         'no-div-regex': 'error',
         'no-else-return': 'error',
-        'no-implicit-coerction': 'error',
+        'no-implicit-coercion': 'error',
         'no-implicit-globals': 'error',
         'no-magic-numbers': 'off',
         'no-multi-str': 'error',
         'no-param-reassign': 'error',
         'no-restricted-properties': 'off',
-        'no-sequences': 'on',
+        'no-sequences': 'error',
         'no-void': 'off',
         'no-warning-comments': 'off',
         'prefer-named-capture-group': 'error',
         'prefer-regex-literals': 'off',
-        'radix': 'always',
+        'radix': ['error', 'always'],
         'require-await': 'off',
         'no-alert':  'error',
         'no-caller': 'error',
@@ -238,7 +239,5 @@ for (const configVariant of configVariants) {
     Object.assign(rootConfig.rules, configVariant.isNotProd.rules)
   }
 }
-
-  console.log(rootConfig)
 
 module.exports = rootConfig
