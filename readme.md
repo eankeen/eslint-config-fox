@@ -14,9 +14,11 @@ Edwin's ESLint configuration
 ### Example
 
 ```js
+// TODO: typings
 // .fox.js
 export default {
   lint: 'off | cozy (default) || strict || excessive',
+  // env: 'node || browser || deno' || ['node?', 'browser?' 'deno?']
 }
 ```
 

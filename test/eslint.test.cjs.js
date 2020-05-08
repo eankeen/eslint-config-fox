@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const eslint = require('eslint')
 const config = require('../')
 
@@ -9,7 +7,6 @@ test('config has basic properties', () => {
   expect(config).toBeObject()
   expect(config.parserOptions).toBeObject()
   expect(config.env).toBeObject()
-  expect(config.env).toContainKey('node')
   expect(config.plugins).toBeArray()
   expect(config.extends).toBeArray()
   expect(config.rules).toBeObject()

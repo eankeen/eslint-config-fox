@@ -29,7 +29,8 @@
   },
   "scripts": {
     "np": "np",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --fix --config eslint.config.cjs ."
   },
   "jest": {
     "setupFilesAfterEnv": [
