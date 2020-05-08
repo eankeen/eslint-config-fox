@@ -16,7 +16,7 @@
     "name": "Edwin Kofler",
     "url": "https://edwinkofler.com"
   },
-  "main": ".eslintrc.cjs",
+  "main": "eslint.config.cjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/eankeen/eslint-config-fox.git"
