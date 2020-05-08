@@ -6,7 +6,7 @@ Edwin's ESLint configuration
 
 - Styling issues are always _warnings_ and auto-fixable
 - Syntax issues are usually _errors_ when either auto-fixable or not
-  - Exceptions include obviously temporary errors (ex. `no-lone-blocks` (`{}`)) (which may be _off_ or _warning)
+  - Exceptions include obviously temporary errors (ex. `no-lone-blocks` (`{}`)) (which may be _off_ or \_warning)
 - Extra syntax issues may be _error_ on `NODE_ENV === production` (ex. loggers)
 
 ## Options
@@ -16,7 +16,7 @@ Edwin's ESLint configuration
 ```js
 // .fox.js
 export default {
-  lint: 'off | cozy (default) || strict || excessive'
+  lint: 'off | cozy (default) || strict || excessive',
 }
 ```
 
@@ -29,12 +29,18 @@ turns of all functional linting. formatting options are still enabled, though
 #### cozy
 
 catches code that is
+
+- aggregous errors
+- non-aggregous auto-fixable errors
 - hard to debug / easy to be buggy
+- isn't obviously buggy (but is buggy)
+- not unobviously buggy (and isn't)
 - deprecated syntax
 
 #### strict
 
 catches code that is
+
 - not up to best practices
 - unecessarily verbose / unecessarily misleading
   - ex. needlessly using `.bind()`

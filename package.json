@@ -34,6 +34,9 @@
   "jest": {
     "setupFilesAfterEnv": [
       "jest-extended"
+    ],
+    "testRegex": [
+      "eslint.test.cjs.js"
     ]
   },
   "husky": {

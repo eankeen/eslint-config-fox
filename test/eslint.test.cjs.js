@@ -1,5 +1,9 @@
+/* eslint-disable */
+
 const eslint = require('eslint')
 const config = require('../')
+
+// jest won't execute matched javascript files ending in '.cjs'
 
 test('config has basic properties', () => {
   expect(config).toBeObject()
@@ -12,14 +16,14 @@ test('config has basic properties', () => {
 })
 
 test('eslint engine evaluates config file', () => {
-  let CLIEngine = eslint.CLIEngine
+  const CLIEngine = eslint.CLIEngine
 
-  let cli = new CLIEngine({
+  const cli = new CLIEngine({
     useEslintrc: false,
     configFile: require.resolve('../'),
   })
 
-  const code = 'let foo = 1\nlet bar = function () {}\nbar(foo)\n'
+  const code = 'const foo = 1\n'
 
   expect(cli.executeOnText(code).errorCount).toBe(0)
 })
