@@ -1,5 +1,11 @@
 # eslint-config-fox
 
+## ⚠️ Archived ⚠️
+
+This repository has been moved to [fox-suite](https://github.com/eankeen/fox-suite)
+
+## Description
+
 Edwin's ESLint configuration
 
 ## Behavior
@@ -14,11 +20,9 @@ Edwin's ESLint configuration
 ### Example
 
 ```js
-// TODO: typings
-// .fox.js
+// fox.config.js
 export default {
   lint: 'off | cozy (default) || strict || excessive',
-  // env: 'node || browser || deno' || ['node?', 'browser?' 'deno?']
 }
 ```
 
@@ -26,11 +30,11 @@ export default {
 
 #### off
 
-turns of all functional linting. formatting options are still enabled, though
+Turns of all functional linting. Formatting options are still enabled, though
 
 #### cozy
 
-catches code that is
+Catches code that has / is
 
 - aggregous errors
 - non-aggregous auto-fixable errors
@@ -41,7 +45,7 @@ catches code that is
 
 #### strict
 
-catches code that is
+Catches code that has / is
 
 - not up to best practices
 - unecessarily verbose / unecessarily misleading
