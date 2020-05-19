@@ -20,29 +20,17 @@ const foxConfig = readFoxConfig()
 
 const configVariants = []
 if (foxConfig.lint === 'off') {
-  configVariants.concat([
-    anyConfig
-  ])
-}
-else if (foxConfig.lint === 'cozy') {
-  configVariants.concat([
-    defaultConfig,
-    cozyConfig
-  ])
-}
-else if (foxConfig.lint === 'strict') {
-  configVariants.concat([
-    defaultConfig,
-    cozyConfig,
-    strictConfig
-  ])
-}
-else if (foxConfig.lint === 'excessive') {
+  configVariants.concat([anyConfig])
+} else if (foxConfig.lint === 'cozy') {
+  configVariants.concat([defaultConfig, cozyConfig])
+} else if (foxConfig.lint === 'strict') {
+  configVariants.concat([defaultConfig, cozyConfig, strictConfig])
+} else if (foxConfig.lint === 'excessive') {
   configVariants.concat([
     defaultConfig,
     cozyConfig,
     strictConfig,
-    excessiveConfig
+    excessiveConfig,
   ])
 }
 
@@ -64,11 +52,9 @@ const configVariants2 = []
 function addEnvConfig(string) {
   if (foxConfig.env === 'browser') {
     configVariants2.push(browserConfig)
-  }
-  else if (foxConfig.env === 'node') {
+  } else if (foxConfig.env === 'node') {
     configVariants2.push(nodeConfig)
-  }
-  else if (foxConfig.env === 'deno') {
+  } else if (foxConfig.env === 'deno') {
     configVariants2.push(denoConfig)
   }
 }
@@ -78,6 +64,5 @@ if (Array.isArray(foxConfig.env)) {
   addEnvConfig(foxConfig.env)
 }
 Object.assign(bareConfig.env, configVariants2.env)
-
 
 module.exports = bareConfig
